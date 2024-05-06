@@ -1,0 +1,343 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+:root {
+  --Desaturated-Red: hsl(0, 37%, 70%);
+  --Soft-Red: hsl(0, 93%, 68%);
+  --Dark-Grayish-Red: hsl(0, 6%, 24%);
+
+  --ff-primary: "Josefin Sans", sans-serif;
+
+  --br: 999rem;
+}
+
+/* For box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Removes default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* List elements */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/*  root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.2;
+}
+
+/* Default styles for elements that do not have a class*/
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Global styling for images*/
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+ul {
+  padding-left: 0;
+}
+
+body {
+  font-size: 16px;
+  font-family: var(--ff-primary);
+  background-color: hsl(10, 100%, 97%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-y: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+
+.first-container {
+  grid-area: first-container;
+  width: 100%;
+}
+
+
+.logo {
+  grid-area: logo;
+}
+
+.second-container {
+  grid-area: second-container;
+}
+
+
+
+.second-container {
+  padding: 2rem 2rem 4rem;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  text-align: center;
+  font-weight: 600;
+  color: var(--Dark-Grayish-Red);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  letter-spacing: 10px;
+}
+
+span {
+  font-weight: 300;
+  color: var(--Desaturated-Red);
+}
+
+.logo {
+  margin-bottom: 1rem;
+  padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+p {
+  color: var(--Desaturated-Red);
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.mobile-image {
+  width: 100%;
+}
+
+.email {
+  width: 100%;
+  border-radius: var(--br);
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--Desaturated-Red);
+  background-color: hsl(10, 100%, 97%);
+}
+
+::placeholder {
+    color: var(--Dark-Grayish-Red);
+    font-size: 15px;
+    font-weight: 400;
+  }
+  
+
+.email-container {
+  position: relative;
+}
+
+form {
+  position: relative;
+}
+
+.arrow-icon {
+  position: absolute;
+  top: -1px;
+  right: -5px;
+  padding: .9rem 1.7rem;
+  border-radius: 1.5rem;
+  background-image: linear-gradient(
+    135deg,
+    hsl(0, 0%, 100%),
+    hsl(0, 100%, 75%)
+  );
+  border: none;
+}
+
+.arrow-icon:hover {
+  cursor: pointer;
+  background-image: linear-gradient(
+    135deg,
+    hsl(0, 0%, 100%),
+    hsl(0, 55%, 79%)
+  );
+}
+
+.success {
+  color: green;
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-top: 0.2rem;
+}
+
+.success input {
+  border-color: #09c372;
+}
+
+.error input {
+  border-color: #ff3860;
+}
+
+.error {
+  color: #ff3860;
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-top: 0.2rem;
+  margin-left: 1rem;
+}
+
+
+@media (min-width: 768px) {
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: .2fr .3fr .3fr
+    
+  }
+
+  .logo-container {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    align-self: center;
+  }
+
+  .first-container {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 4;
+  
+  }
+
+  .second-container {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    max-width: 40rem;
+  }
+
+  h1, p {
+    text-align: left;
+  }
+
+  }
+
+  @media (min-width: 1024px) {
+
+    body {
+      background: url(images/bg-pattern-desktop.svg) no-repeat left;
+      background-color: hsl(10, 100%, 97%);
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-template-rows: .2fr .4fr .4fr;
+      
+    }
+  
+    .logo-container {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      padding-left: 10rem;
+      align-self: center;
+    }
+
+    .arrow-icon {
+      position: absolute;
+      top: -1px;
+      right: -25px;
+      padding: .9rem 2rem;
+      border-radius: 1.5rem;
+      background-image: linear-gradient(
+        135deg,
+        hsl(0, 0%, 100%),
+        hsl(0, 100%, 75%)
+      );
+      border: none;
+    }
+
+    .first-container {
+      grid-column-start: 4;
+      grid-column-end: 6;
+      grid-row-start: 1;
+      grid-row-end: 4;
+    
+    }
+
+    .second-container {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 4;
+      padding-left: 11rem;
+      max-width: 45rem;
+      align-self: self-start;
+    }
+
+    h1, p {
+      text-align: left;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+  }
+  
